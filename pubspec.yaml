@@ -30,6 +30,7 @@ dependencies:
   books_finder: ^4.2.0
   cupertino_icons: ^1.0.2
   fl_chart: ^0.41.0
+  flex_color_scheme: ^4.2.0
   flutter:
     sdk: flutter
 
