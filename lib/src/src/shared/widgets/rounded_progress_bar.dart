@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-class RoundedProgressBar extends StatelessWidget {
-  const RoundedProgressBar({
-    Key? key,
-    required this.numberOfPages,
-    required this.numberOfPagesRead,
-    this.height = 60,
+class OKReadingProgressBar extends StatelessWidget {
+  const OKReadingProgressBar({
+    super.key,
+    this.numberOfPages = 300,
+    this.numberOfPagesRead = 90,
+    this.height = 10,
     this.borderRadius = const BorderRadius.all(Radius.circular(30)),
     this.padding = EdgeInsets.zero,
-  }) : super(key: key);
+  });
 
   final double numberOfPages;
   final double numberOfPagesRead;

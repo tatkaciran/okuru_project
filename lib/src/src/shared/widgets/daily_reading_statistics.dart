@@ -68,21 +68,15 @@ class DailyReadingStatistics extends StatelessWidget {
   FlTitlesData _titlesData() {
     return FlTitlesData(
       show: true,
-      rightTitles: _invisibleTitles(),
-      topTitles: _invisibleTitles(),
-      bottomTitles: _invisibleTitles(),
-      leftTitles: SideTitles(
+      rightTitles: AxisTitles(sideTitles: _invisibleTitles()),
+      topTitles: AxisTitles(sideTitles: _invisibleTitles()),
+      bottomTitles: AxisTitles(sideTitles: _invisibleTitles()),
+      leftTitles: AxisTitles(
+          sideTitles: SideTitles(
         showTitles: true,
         interval: 1,
-        getTextStyles: (context, value) => TextStyle(
-          color: Colors.grey.shade400,
-          fontWeight: FontWeight.w500,
-          fontSize: 14,
-        ),
-        getTitles: createLeftTitles,
         reservedSize: 50,
-        margin: 20,
-      ),
+      )),
     );
   }
 
@@ -109,7 +103,7 @@ class DailyReadingStatistics extends StatelessWidget {
         return FlSpot(indexOfData, data.toDouble());
       }).toList(),
       isCurved: false,
-      colors: [Colors.red],
+      color: Colors.red,
       barWidth: 2,
       isStrokeCapRound: true,
       dotData: FlDotData(
@@ -123,10 +117,12 @@ class DailyReadingStatistics extends StatelessWidget {
         show: true,
       ),
       belowBarData: BarAreaData(
-        gradientFrom: const Offset(0, 0),
-        gradientTo: const Offset(0, 0.8),
+        gradient: const LinearGradient(
+          begin: Alignment.center,
+          end: Alignment.center,
+          colors: [Colors.red, Colors.transparent],
+        ),
         show: true,
-        colors: [Colors.red, Colors.transparent],
       ),
     );
   }

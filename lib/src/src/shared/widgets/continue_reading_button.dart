@@ -1,22 +1,23 @@
 import 'package:flutter/material.dart';
 
 class ContinueReadingButton extends StatelessWidget {
-  const ContinueReadingButton({
-    Key? key,
-  }) : super(key: key);
+  const ContinueReadingButton({super.key});
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10.0),
+          borderRadius: BorderRadius.circular(5.0),
         ),
       ),
-      onPressed: () {
-        print('okumaya devam et');
-      },
-      child: const Text('Okumaya devam et'),
+      onPressed: () {},
+      child: const Text(
+        "📖",
+        textScaleFactor: 2,
+      ),
     );
   }
 }

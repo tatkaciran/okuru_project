@@ -1,10 +1,10 @@
+// ignore_for_file: avoid_print
+
 import 'package:flutter/material.dart';
 import 'package:okuru/src/src/utils/extension_global.dart';
 
 class ProfileButtonView extends StatelessWidget {
-  const ProfileButtonView({
-    Key? key,
-  }) : super(key: key);
+  const ProfileButtonView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,16 +12,20 @@ class ProfileButtonView extends StatelessWidget {
       child: SizedBox(
         width: context.deviceSize.width - 20,
         child: InkWell(
-          borderRadius: BorderRadius.circular(15),
+          borderRadius: BorderRadius.circular(5),
           overlayColor: MaterialStateProperty.all(Colors.amber),
           onTap: () => print('object'),
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
+          child: const Padding(
+            padding: EdgeInsets.all(8.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: const [
-                UserAvatar(),
-                Center(child: Text('Osman Yapıcıoğlu')),
+              children: [
+                _UserAvatar(),
+                Center(child: Text('''
+Osman Yapıcıoğlu
+Okunan Kitap: 78
+Hazirda Okunan: 16
+Biten Kitap: 62              ''')),
               ],
             ),
           ),
@@ -31,16 +35,17 @@ class ProfileButtonView extends StatelessWidget {
   }
 }
 
-class UserAvatar extends StatelessWidget {
-  const UserAvatar({
-    Key? key,
-  }) : super(key: key);
+class _UserAvatar extends StatelessWidget {
+  const _UserAvatar();
 
   @override
   Widget build(BuildContext context) {
-    return const DecoratedBox(
-      decoration: BoxDecoration(shape: BoxShape.circle, color: Colors.grey),
-      child: SizedBox(
+    return DecoratedBox(
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        color: Colors.red.withOpacity(0.2),
+      ),
+      child: const SizedBox(
         height: 100,
         width: 100,
       ),

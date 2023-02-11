@@ -16,7 +16,7 @@ class ThemePreset {
     tooltipsMatchBackground: true,
     swapColors: false,
     lightIsWhite: false,
-    useSubThemes: true,
+
     visualDensity: FlexColorScheme.comfortablePlatformDensity,
     // To use playground font, add GoogleFonts package and uncomment:
     // fontFamily: GoogleFonts.notoSans().fontFamily,
@@ -27,7 +27,6 @@ class ThemePreset {
       bottomNavigationBarElevation: 0,
       bottomNavigationBarOpacity: 0.95,
       navigationBarOpacity: 0.95,
-      navigationBarMutedUnselectedText: true,
       navigationBarMutedUnselectedIcon: true,
       inputDecoratorIsFilled: true,
       inputDecoratorBorderType: FlexInputBorderType.outline,
@@ -49,7 +48,7 @@ class ThemePreset {
     tooltipsMatchBackground: true,
     swapColors: false,
     darkIsTrueBlack: true,
-    useSubThemes: true,
+
     visualDensity: FlexColorScheme.comfortablePlatformDensity,
     // To use playground font, add GoogleFonts package and uncomment:
     // fontFamily: GoogleFonts.notoSans().fontFamily,
@@ -60,7 +59,6 @@ class ThemePreset {
       bottomNavigationBarElevation: 0,
       bottomNavigationBarOpacity: 0.95,
       navigationBarOpacity: 0.95,
-      navigationBarMutedUnselectedText: true,
       navigationBarMutedUnselectedIcon: true,
       inputDecoratorIsFilled: true,
       inputDecoratorBorderType: FlexInputBorderType.outline,

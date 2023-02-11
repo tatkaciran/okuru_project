@@ -1,4 +1,4 @@
-package com.tatka.okuru
+package com.example.okuru_project
 
 import io.flutter.embedding.android.FlutterActivity
 

@@ -1,37 +1,47 @@
 import 'package:flutter/material.dart';
 
+import '../../../models/book_section.dart';
 import '../../../src/src.dart';
 
 class ContinueToReadTheBookView extends StatelessWidget {
-  const ContinueToReadTheBookView({Key? key}) : super(key: key);
+  final Book? book;
+  const ContinueToReadTheBookView({super.key, this.book});
 
   @override
   Widget build(BuildContext context) {
-    const double _paddingValue = 10;
-    const double _borderRadiusValue = 15;
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: _paddingValue / 1.3),
-      child: DecoratedBox(
-        decoration: BoxDecoration(
-          color: context.theme.dividerColor,
-          borderRadius: BorderRadius.circular(_borderRadiusValue),
-        ),
-        child: Column(
-          children: [
-            Row(children: const [
-              BookCover(),
-              BookDetailsView(children: [
-                ContinueReadingButton(),
-              ])
-            ]),
-            const RoundedProgressBar(
-              padding: EdgeInsets.all(_paddingValue),
-              numberOfPagesRead: 60,
-              numberOfPages: 100,
-              height: 20,
-            )
-          ],
-        ),
+    return DecoratedBox(
+      decoration: BoxDecoration(
+        color: context.theme.dividerColor,
+        borderRadius: BorderRadius.circular(5),
+      ),
+      child: Column(
+        children: [
+          Expanded(
+            child: Row(
+              children: [
+                BookCover(
+                  imageUrl: book?.imageUrl,
+                ),
+                Expanded(
+                  child: Column(
+                    children: [
+                      OKBookTitle(
+                        text: book?.title ?? '',
+                      ),
+                      Text(
+                        book?.description ?? '',
+                        maxLines: 5,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                      const ContinueReadingButton(),
+                    ],
+                  ),
+                )
+              ],
+            ),
+          ),
+          const OKReadingProgressBar()
+        ],
       ),
     );
   }

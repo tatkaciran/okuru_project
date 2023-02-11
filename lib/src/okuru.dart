@@ -1,11 +1,10 @@
-import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
 
 import 'home/home.dart';
 import 'src/src.dart';
 
 class Okuru extends StatelessWidget {
-  const Okuru({Key? key}) : super(key: key);
+  const Okuru({super.key});
 
   @override
   Widget build(BuildContext context) {
