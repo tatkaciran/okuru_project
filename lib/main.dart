@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'src/okuru.dart';
+import 'okuru/okuru.dart';
 
 Future<void> main() async {
   runApp(const Okuru());
